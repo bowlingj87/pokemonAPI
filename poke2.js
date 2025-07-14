@@ -17,9 +17,9 @@ async function fetchPokemonData(pokemonNameOrId) { // Define an asynchronous fun
 function displayPokemonData(data) { // Function to display Pokémon data on the page
  const pokemonInfo = document.getElementById('pokemon-info'); // Get the element where Pokémon info will be displayed
   
-  const name = data.name; // Extract the Pokémon's name from the data
-  const image = data.sprites.front_default; 
-  const types = data.types.map(t => t.type.name).join(', '); // Get the URL of the default front-facing sprite image
+  const name = data.name; // Extract the Pokemon's name from the data
+  const image = data.sprites.front_default; //Extract Pokemon's image
+  const types = data.types.map(({ type }) => type.name).join(', '); //Extract Pokemon's Type
 
   pokemonInfo.innerHTML = `
     <h2 class="text-capitalize">${name}</h2>
